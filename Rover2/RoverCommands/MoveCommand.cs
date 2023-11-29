@@ -1,0 +1,20 @@
+﻿
+
+namespace Rover.Commands
+{
+    public class MoveRoverCommand : IRoverCommand
+    {
+        private readonly char _label;
+        public char Label { get { return _label; } }
+
+        public MoveRoverCommand()
+        {
+            _label = 'M';
+        }
+
+        public void Apply(Vehicule.Rover rover)
+        {
+            rover.Move();
+        }
+    }
+}

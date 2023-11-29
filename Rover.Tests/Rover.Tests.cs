@@ -13,7 +13,7 @@ namespace Rover.Should
             (var rover, var north, var coordinate) = RoverGivens.NorthOrientedRoverInBottomLeftCorner();
 
             Assert.That(rover.ToString(), Is.EqualTo(
-                $"{ coordinate.X } { coordinate.Y } { north.Value }"));
+                $"{ coordinate.X } { coordinate.Y } { north.Label }"));
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace Rover.Should
             Assert.Multiple(() =>
             {
                 Assert.That(rover.Coordinate, Is.EqualTo(coordinate));
-                Assert.That(rover.Orientation, Is.EqualTo(north));
+                Assert.That(rover.Direction, Is.EqualTo(north));
             });
         }
 
@@ -151,15 +151,15 @@ namespace Rover.Should
         public void Rotate_WhenNorthOrientedRoverMakeLeftRotationThenRoverIsWestOriented()
         {
             (var rover, var north, var coordinate) = RoverGivens.NorthOrientedRoverInTopRightCorner();
-            var expectedOrientation = RoverGivens.Orientations['W'];
+            var expectedOrientation = RoverGivens.Directions['W'];
 
             rover.LeftRotation(expectedOrientation);
 
             Assert.Multiple(() =>
             {
                 Assert.That(rover.Coordinate, Is.EqualTo(coordinate));
-                Assert.That(rover.Orientation, Is.Not.EqualTo(north));
-                Assert.That(rover.Orientation, Is.EqualTo(expectedOrientation));
+                Assert.That(rover.Direction, Is.Not.EqualTo(north));
+                Assert.That(rover.Direction, Is.EqualTo(expectedOrientation));
             });
         }
 
@@ -167,17 +167,17 @@ namespace Rover.Should
         public void Rotate_WhenNorthOrientedRoverMakeBadLeftRotationThenInvalidOperationExceptionFired()
         {
             (var rover, var north, var coordinate) = RoverGivens.NorthOrientedRoverInTopRightCorner();
-            var newOrientation = RoverGivens.Orientations['S'];
+            var newOrientation = RoverGivens.Directions['S'];
 
             var exception = Assert.Throws<InvalidOperationException>(() => rover.LeftRotation(newOrientation));
 
 
             Assert.Multiple(() =>
             {
-                Assert.That(exception.Message, Is.EqualTo($"Invalid left rotation : current {newOrientation.Value} - expected {north.Previous}"));
+                Assert.That(exception.Message, Is.EqualTo($"Invalid left rotation : current {newOrientation.Label} - expected {north.Previous}"));
                 Assert.That(rover.Coordinate, Is.EqualTo(coordinate));
-                Assert.That(rover.Orientation, Is.Not.EqualTo(newOrientation));
-                Assert.That(rover.Orientation, Is.EqualTo(north));                
+                Assert.That(rover.Direction, Is.Not.EqualTo(newOrientation));
+                Assert.That(rover.Direction, Is.EqualTo(north));                
             });
         }
 
@@ -185,16 +185,16 @@ namespace Rover.Should
         public void Rotate_WhenNorthOrientedRoverMakeBadRighttRotationThenInvalidOperationExceptionFired()
         {
             (var rover, var north, var coordinate) = RoverGivens.NorthOrientedRoverInTopRightCorner();
-            var newOrientation = RoverGivens.Orientations['S'];
+            var newOrientation = RoverGivens.Directions['S'];
 
             var exception = Assert.Throws<InvalidOperationException>(() => rover.RightRotation(newOrientation));
 
             Assert.Multiple(() =>
             {
-                Assert.That(exception.Message, Is.EqualTo($"Invalid right rotation : current {newOrientation.Value} - expected {north.Next}"));
+                Assert.That(exception.Message, Is.EqualTo($"Invalid right rotation : current {newOrientation.Label} - expected {north.Next}"));
                 Assert.That(rover.Coordinate, Is.EqualTo(coordinate));
-                Assert.That(rover.Orientation, Is.Not.EqualTo(newOrientation));
-                Assert.That(rover.Orientation, Is.EqualTo(north));
+                Assert.That(rover.Direction, Is.Not.EqualTo(newOrientation));
+                Assert.That(rover.Direction, Is.EqualTo(north));
             });
         }
         #endregion Rotates

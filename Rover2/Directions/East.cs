@@ -1,9 +1,9 @@
 ﻿
-namespace Rover.Orientation
+namespace Rover.Direction
 {
     public class East(ushort max) : IDirection
     {
-        public char Value => 'E';
+        public char Label => 'E';
         private readonly ushort _max = max;
 
         public char Previous => 'N';

@@ -1,8 +1,8 @@
-﻿namespace Rover.Orientation
+﻿namespace Rover.Direction
 {
     public interface IDirection
     {
-        public char Value { get; }
+        public char Label { get; }
         public char Previous { get; }
         public char Next { get; }
 

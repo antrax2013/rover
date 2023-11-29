@@ -1,4 +1,4 @@
-﻿using Rover.Orientation;
+﻿using Rover.Direction;
 
 namespace Rover.Givens
 {
@@ -8,7 +8,7 @@ namespace Rover.Givens
         public static readonly Coordinate Origin = new(0, 0);
         public static readonly Coordinate C1x1 = new(1, 1);
 
-        public static readonly Dictionary<char, IDirection> Orientations;
+        public static readonly Dictionary<char, IDirection> Directions;
 
         static RoverGivens()
         {
@@ -17,18 +17,18 @@ namespace Rover.Givens
             var south = new South();
             var east = new East(TopRigthCorner.X);
 
-            Orientations = new Dictionary<char, IDirection> {
-                { north.Value, north },
-                { west.Value, west },
-                { south.Value, south },
-                { east.Value, east },
+            Directions = new Dictionary<char, IDirection> {
+                { north.Label, north },
+                { west.Label, west },
+                { south.Label, south },
+                { east.Label, east },
             };
         }
 
         public static (Vehicule.Rover, IDirection, Coordinate) NorthOrientedRoverInBottomLeftCorner()
         {
             var coordinate = Origin;
-            var north = Orientations['N'];
+            var north = Directions['N'];
             var rover = new Vehicule.Rover(coordinate, north);
 
             return (rover, north, coordinate);
@@ -37,7 +37,7 @@ namespace Rover.Givens
         public static (Vehicule.Rover, IDirection, Coordinate) NorthOrientedRoverInTopRightCorner()
         {
             var coordinate = TopRigthCorner;
-            var north = Orientations['N'];
+            var north = Directions['N'];
             var rover = new Vehicule.Rover(coordinate, north);
 
             return (rover, north, coordinate);
@@ -46,7 +46,7 @@ namespace Rover.Givens
         public static (Vehicule.Rover, IDirection, Coordinate) WestOrientedRoverInBottomLeftCorner()
         {
             var coordinate = Origin;
-            var west = Orientations['W'];
+            var west = Directions['W'];
             var rover = new Vehicule.Rover(coordinate, west);
 
             return (rover, west, coordinate);
@@ -55,7 +55,7 @@ namespace Rover.Givens
         public static (Vehicule.Rover, IDirection, Coordinate) WestOrientedRoverInC1x1()
         {
             var coordinate = C1x1;
-            var west = Orientations['W'];
+            var west = Directions['W'];
             var rover = new Vehicule.Rover(coordinate, west);
 
             return (rover, west, coordinate);
@@ -64,7 +64,7 @@ namespace Rover.Givens
         public static (Vehicule.Rover, IDirection, Coordinate) SouthOrientedRoverInBottomLeftCorner()
         {
             var coordinate = Origin;
-            var south = Orientations['S'];
+            var south = Directions['S'];
             var rover = new Vehicule.Rover(coordinate, south);
 
             return (rover, south, coordinate);
@@ -73,7 +73,7 @@ namespace Rover.Givens
         public static (Vehicule.Rover, IDirection, Coordinate) SouthOrientedRoverInC1x1()
         {
             var coordinate = C1x1;
-            var south = Orientations['S'];
+            var south = Directions['S'];
             var rover = new Vehicule.Rover(coordinate, south);
 
             return (rover, south, coordinate);
@@ -82,7 +82,7 @@ namespace Rover.Givens
         public static (Vehicule.Rover, IDirection, Coordinate) EastOrientedRoverInBottomLeftCorner()
         {
             var coordinate = Origin;
-            var east = Orientations['E'];
+            var east = Directions['E'];
             var rover = new Vehicule.Rover(coordinate, east);
 
             return (rover, east, coordinate);
@@ -91,7 +91,7 @@ namespace Rover.Givens
         public static (Vehicule.Rover, IDirection, Coordinate) EastOrientedRoverInTopRightCorner()
         {
             var coordinate = TopRigthCorner;
-            var east = Orientations['E'];
+            var east = Directions['E'];
             var rover = new Vehicule.Rover(coordinate, east);
 
             return (rover, east, coordinate);

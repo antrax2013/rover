@@ -1,34 +1,34 @@
-﻿using Rover.Orientation;
+﻿using Rover.Direction;
 using Rover;
 
 namespace Vehicule
 {
-    public sealed class Rover(Coordinate coordinate, IDirection orientation)
+    public sealed class Rover(Coordinate coordinate, IDirection direction)
     {
         public Coordinate Coordinate { get; private set; } = coordinate;
-        public IDirection Orientation { get; private set; } = orientation;
+        public IDirection Direction { get; private set; } = direction;
 
         public void Move() { 
-            Coordinate = Orientation.Translate(Coordinate);
+            Coordinate = Direction.Translate(Coordinate);
         }
 
-        public void LeftRotation(IDirection orientation)
+        public void LeftRotation(IDirection direction)
         {
-            if (Orientation.Previous != orientation.Value)
-                throw new InvalidOperationException($"Invalid left rotation : current {orientation.Value} - expected { Orientation.Previous}");
-            Orientation = orientation;
+            if (Direction.Previous != direction.Label)
+                throw new InvalidOperationException($"Invalid left rotation : current {direction.Label} - expected { Direction.Previous}");
+            Direction = direction;
         }
 
-        public void RightRotation(IDirection orientation)
+        public void RightRotation(IDirection direction)
         {
-            if (Orientation.Next != orientation.Value)
-                throw new InvalidOperationException($"Invalid right rotation : current {orientation.Value} - expected {Orientation.Next}");
-            Orientation = orientation;
+            if (Direction.Next != direction.Label)
+                throw new InvalidOperationException($"Invalid right rotation : current {direction.Label} - expected {Direction.Next}");
+            Direction = direction;
         }
 
         public override string ToString()
         {
-            return $"{ Coordinate.X } { Coordinate.Y} { Orientation.Value}";
+            return $"{ Coordinate.X } { Coordinate.Y} { Direction.Label}";
         }
     }
 }

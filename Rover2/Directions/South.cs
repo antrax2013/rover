@@ -1,9 +1,9 @@
 ﻿
-namespace Rover.Orientation
+namespace Rover.Direction
 {
     public class South : IDirection
     {
-        public char Value => 'S';
+        public char Label => 'S';
 
         public char Previous => 'W';
         public char Next => 'E';
