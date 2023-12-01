@@ -6,7 +6,6 @@ namespace Rover.Should
 
     public class RoverShould
     {
-        
         [Test]
         public void ToString_WhenRoverHasFinishedThenItDisplayInformation()
         {
