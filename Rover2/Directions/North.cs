@@ -1,7 +1,6 @@
-﻿
-namespace Rover.Direction
+﻿namespace Rover.Directions
 {
-    public class North (ushort max) : IDirection
+    public sealed class North (ushort max) : IDirection
     {
         public char Label => 'N';
         private readonly ushort _max = max;

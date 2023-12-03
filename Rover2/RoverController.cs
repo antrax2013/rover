@@ -1,9 +1,9 @@
-﻿using Rover.Direction;
+﻿using Rover.Directions;
 using Rover.Exceptions;
 
 namespace Rover
 {
-    public class RoverController
+    public sealed class RoverController
     {
         public readonly List<char> Instructions;
         public readonly Vehicule.Rover Rover;
@@ -38,7 +38,7 @@ namespace Rover
                         Rover.Move();
                         break;
                 }
-                //Console.WriteLine(Rover.ToString());
+                Console.WriteLine(Rover.ToString());
             });            
         }
     }

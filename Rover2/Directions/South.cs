@@ -1,12 +1,11 @@
-﻿
-namespace Rover.Direction
+﻿namespace Rover.Directions
 {
-    public class South : IDirection
+    public sealed class South : IDirection
     {
         public char Label => 'S';
 
-        public char Previous => 'W';
-        public char Next => 'E';
+        public char Previous => 'E';
+        public char Next => 'W';
 
         public Coordinate Translate(Coordinate coordinate)
         {

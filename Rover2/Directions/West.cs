@@ -1,7 +1,6 @@
-﻿
-namespace Rover.Direction
+﻿namespace Rover.Directions
 {
-    public class West() : IDirection
+    public sealed class West() : IDirection
     {
         public char Label => 'W';
 

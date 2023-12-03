@@ -1,5 +1,5 @@
 ﻿using Rover.Commands;
-using Rover.Direction;
+using Rover.Directions;
 
 namespace Rover.RoverCommands
 {

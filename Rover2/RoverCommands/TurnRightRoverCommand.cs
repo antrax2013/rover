@@ -1,11 +1,9 @@
-﻿
-
-using Rover.Direction;
+﻿using Rover.Directions;
 using Rover.RoverCommands;
 
 namespace Rover.Commands
 {
-    public class TurnRightRoverCommand(Dictionary<char, IDirection> directions) : ARoverRotationCommand(directions)
+    public sealed class TurnRightRoverCommand(Dictionary<char, IDirection> directions) : ARoverRotationCommand(directions)
     {
         public override char Label => 'R';
 

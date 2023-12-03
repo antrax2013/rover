@@ -1,4 +1,4 @@
-﻿using Rover.Direction;
+﻿using Rover.Directions;
 
 namespace Rover.Givens
 {
@@ -8,22 +8,7 @@ namespace Rover.Givens
         public static readonly Coordinate Origin = new(0, 0);
         public static readonly Coordinate C1x1 = new(1, 1);
 
-        public static readonly Dictionary<char, IDirection> Directions;
-
-        static RoverGivens()
-        {
-            var north = new North(TopRigthCorner.Y);
-            var west = new West();
-            var south = new South();
-            var east = new East(TopRigthCorner.X);
-
-            Directions = new Dictionary<char, IDirection> {
-                { north.Label, north },
-                { west.Label, west },
-                { south.Label, south },
-                { east.Label, east },
-            };
-        }
+        public static readonly Dictionary<char, IDirection> Directions = FourCardinalDirections.Build(TopRigthCorner);
 
         public static (Vehicule.Rover, IDirection, Coordinate) NorthOrientedRoverInBottomLeftCorner()
         {

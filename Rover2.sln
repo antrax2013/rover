@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rover", "Rover2\Rover.csproj", "{B4989E11-DB60-4680-9F8A-0158C7DC17E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rover.Tests", "Rover.Tests\Rover.Tests.csproj", "{E45A6A79-A1DE-4BB2-AD09-A460248BAFE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rover.Tests", "Rover.Tests\Rover.Tests.csproj", "{E45A6A79-A1DE-4BB2-AD09-A460248BAFE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

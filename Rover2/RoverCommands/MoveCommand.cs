@@ -2,7 +2,7 @@
 
 namespace Rover.Commands
 {
-    public class MoveRoverCommand : IRoverCommand
+    public sealed class MoveRoverCommand : IRoverCommand
     {
         private readonly char _label;
         public char Label { get { return _label; } }
