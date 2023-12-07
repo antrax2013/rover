@@ -14,11 +14,20 @@ namespace Rover.Tests.RoverSimulationFactory.Should
             Assert.DoesNotThrow(() => simulation.AddRover(rover, "MM"));
         }
 
-        [Test]
-        public void Creation_GivenOutOfAreaRoverWhenTheRoverIsAddedThenAInvalidArguementExceptionIsFired()
+        private static readonly object[] _outOfRangeCoordinate =
         {
-            var simulation = new Rover.RoverSimulationFactory(RoverGivens.C1x1);
-            (var rover, _, _) = RoverGivens.NorthOrientedRoverInTopRightCorner();
+            new object[] { RoverGivens.C0x5 },
+            new object[] { RoverGivens.C5x0  },
+            new object[] { RoverGivens.TopRigthCorner  },
+        };
+
+        [TestCaseSource(nameof(_outOfRangeCoordinate))]
+
+        public void Creation_GivenOutOfAreaRoverWhenTheRoverIsAddedThenAInvalidArguementExceptionIsFired(Coordinate coordinate)
+        {
+            var simulation = new Rover.RoverSimulationFactory(RoverGivens.TopRigthCorner);
+            var north = RoverGivens.Directions['N'];
+            var rover = new Vehicule.Rover(coordinate, north);
 
             var expectedMessage = $"The rover {rover} is out of the area";
 

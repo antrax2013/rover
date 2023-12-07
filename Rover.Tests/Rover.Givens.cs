@@ -7,6 +7,8 @@ namespace Rover.Givens
         public static readonly Coordinate TopRigthCorner = new(5, 5);
         public static readonly Coordinate Origin = new(0, 0);
         public static readonly Coordinate C1x1 = new(1, 1);
+        public static readonly Coordinate C5x0 = new(5, 0);
+        public static readonly Coordinate C0x5 = new(0, 5);
 
         public static readonly Dictionary<char, IDirection> Directions = FourCardinalDirections.Build(TopRigthCorner);
 

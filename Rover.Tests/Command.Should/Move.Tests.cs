@@ -29,7 +29,26 @@ namespace Rover.Tests.Command.Should
         public void GivenNorthOrientedRoverInTopRightCorner_WhenMoveCommandFired_ThenRoverNotMoved()
         {
             (var rover, _, _) = RoverGivens.NorthOrientedRoverInTopRightCorner();
-            var expectedCoodinate = new Coordinate(rover.Coordinate.X, Convert.ToUInt16(rover.Coordinate.Y));
+            var expectedCoodinate = new Coordinate(rover.Coordinate.X, rover.Coordinate.Y);
+            var expectedDirection = rover.Direction;
+
+            var moveRoverCommand = new MoveRoverCommand();
+            moveRoverCommand.Apply(rover);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(moveRoverCommand.Label, Is.EqualTo('M'));
+                Assert.That(rover.Direction.Label, Is.EqualTo(expectedDirection.Label));
+                Assert.That(rover.Coordinate.X, Is.EqualTo(expectedCoodinate.X));
+                Assert.That(rover.Coordinate.Y, Is.EqualTo(expectedCoodinate.Y));
+            });
+        }
+
+        [Test]
+        public void GivenWestOrientedRoverInBottomLeftCorner_WhenMoveCommandFired_ThenRoverNotMoved()
+        {
+            (var rover, _, _) = RoverGivens.WestOrientedRoverInBottomLeftCorner();
+            var expectedCoodinate = new Coordinate(rover.Coordinate.X, rover.Coordinate.Y);
             var expectedDirection = rover.Direction;
 
             var moveRoverCommand = new MoveRoverCommand();
