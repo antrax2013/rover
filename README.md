@@ -19,5 +19,12 @@ Test Output:
 
 # Objective
 - 100% test coverage
-- 100% mutation tests
+- 100% mutated tests
 - have fun writing code
+
+For the kata is use :
+- .Net 8.0
+- Nunit
+- test coverage : https://github.com/coverlet-coverage/coverlet
+- report generator : https://github.com/danielpalme/ReportGenerator
+- stryker mutator .Net : https://github.com/stryker-mutator/stryker-net
