@@ -42,6 +42,10 @@ namespace Rover.Tests.RoverSimulationFactory.Should
         {
             new object[] { new Vehicule.Rover(new Coordinate(1, 2), RoverGivens.Directions['N']), "LMLMLMLMM", new Coordinate(1,3), 'N' },
             new object[] { new Vehicule.Rover(new Coordinate(3, 3), RoverGivens.Directions['E']), "MMRMMRMRRM", new Coordinate(5,1), 'E'  },
+            new object[] { new Vehicule.Rover(new Coordinate(2, 1), RoverGivens.Directions['E']), "RRRR", new Coordinate(2,1), 'E'  },
+            new object[] { new Vehicule.Rover(new Coordinate(2, 1), RoverGivens.Directions['E']), "LLLL", new Coordinate(2,1), 'E'  },
+            new object[] { new Vehicule.Rover(new Coordinate(2, 1), RoverGivens.Directions['E']), "LR", new Coordinate(2,1), 'E'  },
+            new object[] { new Vehicule.Rover(new Coordinate(2, 1), RoverGivens.Directions['E']), "RL", new Coordinate(2,1), 'E'  },
         };
 
         [TestCaseSource(nameof(_standardTestCases))]

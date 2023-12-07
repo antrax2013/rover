@@ -38,7 +38,7 @@ namespace Rover
                         Rover.Move();
                         break;
                 }
-                Console.WriteLine(Rover.ToString());
+                //Console.WriteLine(Rover.ToString());
             });            
         }
     }
