@@ -31,5 +31,7 @@ namespace Rover
             }
             return results;
         }
+
+        public IDirection GetDirection(char d) => _directions[d];
     }
 }
