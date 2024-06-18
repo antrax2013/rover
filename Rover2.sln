@@ -12,6 +12,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{7CE6129C-0529-4792-AC8D-3A223867CD46}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extras", "Extras", "{0EB000BF-A918-4190-9FFE-6BD73E8B2065}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{22EA4A2A-8D7A-4B7F-AC5B-256711967928}"
 	ProjectSection(SolutionItems) = preProject

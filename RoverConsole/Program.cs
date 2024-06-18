@@ -22,7 +22,7 @@ if (!String.IsNullOrEmpty(info))
         }
         else continue;
 
-        Console.WriteLine("Give rover commands : [M : move, L : turn left, R : turn right");
+        Console.WriteLine("Give rover commands : [ M : move, L : turn left, R : turn right ]");
         info = (Console.ReadLine() ?? "").Trim();
 
         if (!string.IsNullOrWhiteSpace(info))
