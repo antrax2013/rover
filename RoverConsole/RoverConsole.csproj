@@ -5,8 +5,16 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<RepositoryUrl>https://github.com/antrax2013/rover</RepositoryUrl>
   </PropertyGroup>
 
+  <ItemGroup>
+	<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+	  <PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+  </ItemGroup>
+	
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

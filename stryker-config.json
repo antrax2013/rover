@@ -1,0 +1,28 @@
+{
+    "stryker-config": {
+        "solution": "Rover2.sln",
+        "thresholds": {
+            "high": 90,
+            "low": 80,
+            "break": 80
+        },
+        "mutate": [
+            "**/*.cs"
+        ],
+        "reporters": [
+            "html",
+            "cleartext",
+            "progress",
+            "dashboard"
+        ],
+        "project-info": {
+            "module": "rover",
+            "name": "https://github.com/antrax2013/rover",
+            "version": "main"
+        },
+        "since": {
+            "target": "main",
+            "enabled": false
+        }
+    }
+}
