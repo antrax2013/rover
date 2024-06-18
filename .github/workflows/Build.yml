@@ -1,0 +1,43 @@
+name: Build and Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore: [ main ]  
+    paths:
+    - '**.cs'
+    - '**.csproj'
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_VERSION: '8.0.204' # The .NET SDK version to use
+
+permissions:
+  contents: read
+
+jobs:
+  quick-workflow:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Install tools and restore
+      run: |
+        dotnet tool install --global dotnet-coverage
+        dotnet tool restore
+        dotnet restore
+      
+    - name: Build
+      run: dotnet build --configuration Release --no-restore --no-incremental
+    
+    - name: Test
+      run: dotnet-coverage collect 'dotnet test --no-restore --verbosity normal' -f xml -o 'coverage.xml'
