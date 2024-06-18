@@ -1,12 +1,18 @@
 {
-  "version": 1,
-  "isRoot": true,
-  "tools": {
-    "dotnet-coverage": {
-      "version": "17.11.3",
-      "commands": [
-        "dotnet-coverage"
-      ]
+    "version": 1,
+    "isRoot": true,
+    "tools": {
+        "dotnet-stryker": {
+            "version": "4.0.6",
+            "commands": [
+                "dotnet-stryker"
+            ]
+        },
+        "dotnet-coverage": {
+            "version": "17.11.3",
+            "commands": [
+                "dotnet-coverage"
+            ]
+        }
     }
-  }
 }

@@ -1,7 +1,9 @@
-# The Mars Rover Kata
+# Kata Mars Rover
 [see mars-rover-kata ](https://github.com/DanilSuits/mars-rover-kata)
 
-## Inputs
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fantrax2013%2Frover%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/antrax2013/rover/main)
+
+## Données en entrée
 Test Input:
 ```
 5 5
@@ -17,12 +19,12 @@ Test Output:
 5 1 E
 ```
 
-# Objective
+# Mes objectifs sur ce kata
 - test coverage : 100% 
 - mutation score : 100%
 - have fun writing code
 
-For the kata is use :
+Mes dépendances :
 - .Net 8.0
 - Nunit
 - test coverage : https://github.com/coverlet-coverage/coverlet
@@ -30,13 +32,13 @@ For the kata is use :
 - stryker mutator .Net : https://github.com/stryker-mutator/stryker-net
 
 # Branches :
-- master : completed Kata 
+- master : la branche avec le kata terminé
 - [instrumentalized](https://github.com/antrax2013/rover/tree/instrumentalized-tests) : branche with test coverage, report generator and stryker mutator setted
 - [fix-instrumentalized-tests](https://github.com/antrax2013/rover/tree/fix-instrumentalized-tests): branch with a mutation score 100%
 
 
-# Results
-# Mutation Testing Summary
+# Resultas
+## Mutation Testing Summary
 
 | File                                     | Score   | Killed | Survived | Timeout | No Coverage | Ignored | Compile Errors | Total Detected | Total Undetected | Total Mutants |
 | ---------------------------------------- | ------- | ------ | -------- | ------- | ----------- | ------- | -------------- | -------------- | ---------------- | ------------- |
@@ -60,3 +62,6 @@ For the kata is use :
 ## The final mutation score is 100,00%
 
 ### *Coverage Thresholds: high:80 low:60 break:0*
+
+# Auteur
+[![build](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cyril-cophignon-b58b5a5b/)

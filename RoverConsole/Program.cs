@@ -3,6 +3,8 @@ using RoverConsole.Tracing;
 
 new RoverEventListner();
 
+Console.Write("To test CI/CD workflow");
+
 Console.WriteLine("Welcome to rover exploration");
 Console.WriteLine("Define the area :");
 
