@@ -7,7 +7,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rover", "Rover2\Rover.cspro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rover.Tests", "Rover.Tests\Rover.Tests.csproj", "{E45A6A79-A1DE-4BB2-AD09-A460248BAFE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoverConsole", "RoverConsole\RoverConsole.csproj", "{8F5974ED-0DBA-4270-9600-82CB90C4579E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoverConsole", "RoverConsole\RoverConsole.csproj", "{8F5974ED-0DBA-4270-9600-82CB90C4579E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{7CE6129C-0529-4792-AC8D-3A223867CD46}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extras", "Extras", "{0EB000BF-A918-4190-9FFE-6BD73E8B2065}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{22EA4A2A-8D7A-4B7F-AC5B-256711967928}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\Build.yml = .github\workflows\Build.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{25D9CF81-E840-443E-85FD-558C97CE8C8D}"
+	ProjectSection(SolutionItems) = preProject
+		.config\dotnet-tools.json = .config\dotnet-tools.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +44,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7CE6129C-0529-4792-AC8D-3A223867CD46} = {0EB000BF-A918-4190-9FFE-6BD73E8B2065}
+		{22EA4A2A-8D7A-4B7F-AC5B-256711967928} = {7CE6129C-0529-4792-AC8D-3A223867CD46}
+		{25D9CF81-E840-443E-85FD-558C97CE8C8D} = {0EB000BF-A918-4190-9FFE-6BD73E8B2065}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7B26FBB9-5612-4119-A311-3E3523DEF376}
